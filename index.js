@@ -10,7 +10,6 @@ var randomstring = require('randomstring');
 const {UrlModel} = require('./models/urlshort');
 
 mongoose.connect("mongodb+srv://admin:mahesh123@cluster0.e59j9.mongodb.net/urlshort?retryWrites=true&w=majority")
-const PORT = 8000;
 
 app.set('view engine',"ejs");
 app.use(bodyParser.urlencoded({enxtended: true}))
@@ -57,4 +56,4 @@ app.get('/delete/:id',function(req,res){
         res.redirect('/')
     })
 })
-app.listen(PORT, () => console.log("Server is listening on port " + PORT));
+app.listen(process.env.PORT || 3000, () => console.log("Server is listening on port " + PORT));
