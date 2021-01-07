@@ -38,17 +38,19 @@ app.post('/create',function(req,res){
 })
 
 
-app.get('/:urlId',function(req,res){
-    let urlShort = UrlModel.findOne({surl : req.params.urlId},function(err,data){
-        if(err) throw err;
+app.get('/:urlId', function (req, res) {
+    UrlModel.findOne({ surl: req.params.urlId }, function (err, data) {
+        if (err) throw err;
 
-        UrlModel.findByIdAndUpdate({_id:data.id},{$inc:{clickCount : 1}},function(err,updatedData){
-            if(err) throw err;
-            res.redirect(data.lurl);
+        UrlModel.findByIdAndUpdate({ _id: data.id }, { $inc: { clickCount: 1 } }, function (err, updatedData) {
+            if (err) throw err;
+            res.redirect(data.longUrl)
         })
-  
+
+
     })
 })
+
 
 app.get('/delete/:id',function(req,res){
     UrlModel.findByIdAndDelete({_id:req.params.id},function(err,deleteData){
