@@ -44,7 +44,7 @@ app.get('/:urlId', function (req, res) {
 
         UrlModel.findByIdAndUpdate({ _id: data.id }, { $inc: { clickCount: 1 } }, function (err, updatedData) {
             if (err) throw err;
-            res.redirect(data.longUrl)
+            res.redirect(data.lurl)
         })
 
 
