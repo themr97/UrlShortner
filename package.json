@@ -1,5 +1,5 @@
 {
-  "name": "URL",
+  "name": "urlshort",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,5 +17,14 @@
     "mongoose": "^5.11.10",
     "nodemon": "^2.0.7",
     "randomstring": "^1.1.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/themr97/UrlShortner.git"
+  },
+  "bugs": {
+    "url": "https://github.com/themr97/UrlShortner/issues"
+  },
+  "homepage": "https://github.com/themr97/UrlShortner#readme"
 }
